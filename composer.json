@@ -1,0 +1,12 @@
+{
+    "name": "horos/php7new",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "fakerphp/faker": "^1.20"
+    }
+}
