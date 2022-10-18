@@ -34,7 +34,7 @@ class Post
 
 
 /**
- * @return  Person
+ * @return  User
  */
 public function getAuthor(): User
 {
