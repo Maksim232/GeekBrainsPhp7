@@ -2,7 +2,7 @@
 
 namespace App\Blog;
 
-class Comments
+class Comment
 {
     public function __construct(
         private int $id,
@@ -74,6 +74,10 @@ class Comments
     public function setText(string $text): void
     {
         $this->text = $text;
+    }
+
+    public function __toString(){
+        return $this->user . ' печатает коммент ' . $this->text . PHP_EOL;
     }
 
 }

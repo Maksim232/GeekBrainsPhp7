@@ -1,8 +1,10 @@
 <?php
-namespace App\Blog\MemoryUser;
+namespace App\Blog\Repositories\UsersRepository;
+use App\Blog\Exceptions\UserNotFoundException;
 use App\Blog\User;
+use App\Blog\Exceptions;
 
-class MemoryUserRep
+class InMemoryUsersRepository
 {
 
     private array $users = [];
@@ -16,7 +18,7 @@ class MemoryUserRep
     /**
      * @param int $id
      * @return User
-     * @throws UserNotFoundExp
+     * @throws UserNotFoundException
      */
     public function get(int $id): User
     {
@@ -25,7 +27,7 @@ class MemoryUserRep
                 return $user;
             }
         }
-        throw new UserNotFoundExp("User not Found: $id");
+        throw new UserNotFoundException("User not Found: $id");
     }
 
 }

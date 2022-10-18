@@ -1,17 +1,49 @@
 <?php
 
 namespace App\Blog;
-
-
 use Faker\Provider\Person;
+use App\Blog\Repositories\UsersRepository;
 
 class Post
 {
     public function __construct(
-        private int $id,
+        private UUID $uuid,
         private User $user,
+        private string $title,
         private string $text
     ) {
+    }
+
+    /**
+     * @return UUID
+     */
+    public function getUuid(): UUID
+    {
+        return $this->uuid;
+    }
+
+    /**
+     * @param UUID $uuid
+     */
+    public function setUuid(UUID $uuid): void
+    {
+        $this->uuid = $uuid;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
     }
 /**
  * @return int
@@ -68,5 +100,9 @@ public function setText(string $text): Post
 {
     $this->text = $text;
     return $this;
+}
+
+public function __toString(){
+    return $this->user . ' печатает ' . $this->text . PHP_EOL;
 }
 }

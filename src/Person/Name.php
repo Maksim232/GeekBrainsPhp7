@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Person;
-
+use App\Blog\UUID;
 class Name
 {
     public function __construct(
@@ -11,7 +11,7 @@ class Name
     }
     public function __toString()
     {
-        return $this->fitstName . $this->lastName  .' ';
+        return $this->firstName . ' ' . $this->lastName  . ' ';
     }
     /**
      * @return string
