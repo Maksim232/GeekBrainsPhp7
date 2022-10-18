@@ -14,8 +14,8 @@ class User
     }
     public function __toString()
     {
-        return 'Пользователь' . $this->id .
-            ' (с именем ' . $this->username . 'и логином'. $this->login .PHP_EOL;
+        return ' Пользователь ' . $this->id .
+            '  с именем ' . $this->username . 'и логином '. $this->login .PHP_EOL;
     }
 }
 

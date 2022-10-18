@@ -11,7 +11,7 @@ class Name
     }
     public function __toString()
     {
-        return $this->fitstName . $this->lastName  .' ';
+        return $this->firstName . ' ' . $this->lastName  . ' ';
     }
     /**
      * @return string
