@@ -33,19 +33,14 @@ $postsRepository = new SqlitePostsRepository($connection);
 
 
 
-//$user = $usersRepository->get(new UUID('cbc7b92f-6013-47f0-b0e0-6d062c0684ff'));
+$user = $usersRepository->get(new UUID('cbc7b92f-6013-47f0-b0e0-6d062c0684ff'));
 //var_dump($user);
 
 
 try {
  $user = $usersRepository->get(new UUID('cbc7b92f-6013-47f0-b0e0-6d062c0684ff'));
-    $post = new Post(
-        UUID::random(),
-        $user,
-        'Заглавный',
-        'Текст'
-    );
-    $postsRepository->save($post);
+ $post = $postsRepository->get(new UUID('8d2ad562-9940-44f1-abe4-d07551f2779e'));
+    print_r($post);
 }
     catch (Exception $e){
  echo $e->getMessage();

@@ -56,7 +56,7 @@ class SqliteUsersRepository implements UsersRepositoryInterface
         $statement->execute([(string)$uuid]);
 
         return $this->getUser($statement, $uuid);
-}
+    }
 
     /**
      * @throws UserNotFoundException
@@ -70,7 +70,7 @@ class SqliteUsersRepository implements UsersRepositoryInterface
         $statement->execute([
             ':username' => $username,
         ]);
-       return $this->getUser($statement, $username);
+        return $this->getUser($statement, $username);
     }
 
     /**
@@ -86,11 +86,11 @@ class SqliteUsersRepository implements UsersRepositoryInterface
             );
         }
         return new User(
-        new UUID($result['uuid']),
-        new Name($result['first_name'],
-            $result['last_name']), $result['username'],
+            new UUID($result['uuid']),
+            new Name($result['first_name'],
+                $result['last_name']), $result['username'],
         );
-}
+    }
 
 
 

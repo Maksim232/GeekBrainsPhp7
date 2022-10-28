@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Blog;
+use App\Blog\User;
 use Faker\Provider\Person;
 use App\Blog\Repositories\UsersRepository;
 
@@ -68,7 +69,7 @@ class Post
 /**
  * @return  User
  */
-public function getAuthor(): User
+public function getUser(): User
 {
     return $this->user ;
 }
@@ -78,7 +79,7 @@ public function getAuthor(): User
 /**
  * @param User $user
  */
-public function setAuthor(User $user): void
+public function setUser(User $user): void
 {
     $this->user = $user;
 }

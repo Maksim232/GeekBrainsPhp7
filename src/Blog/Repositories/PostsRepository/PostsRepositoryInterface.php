@@ -1,5 +1,6 @@
 <?php
 namespace App\Blog\Repositories\PostsRepository;
+use App\Blog\Repositories\UsersRepository\SqliteUsersRepository;
 use App\Blog\Post;
 use App\Blog\User;
 use App\Blog\UUID;
