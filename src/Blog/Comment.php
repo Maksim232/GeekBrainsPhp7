@@ -5,7 +5,7 @@ namespace App\Blog;
 class Comment
 {
     public function __construct(
-        private int $id,
+        private UUID $uuid,
         private Post $post,
         private User $user,
         private string $text
@@ -13,19 +13,19 @@ class Comment
     }
 
     /**
-     * @return int
+     * @return UUID
      */
-    public function getId(): int
+    public function getUuid(): UUID
     {
-        return $this->id;
+        return $this->uuid;
     }
 
     /**
-     * @param int $id
+     * @param UUID $uuid
      */
-    public function setId(int $id): void
+    public function setId(UUID $uuid): void
     {
-        $this->id = $id;
+        $this->uuid = $uuid;
     }
 
     /**
