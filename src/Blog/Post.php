@@ -5,7 +5,7 @@ use App\Blog\User;
 use Faker\Provider\Person;
 use App\Blog\Repositories\UsersRepository;
 
-class Post
+class Post extends \App\Blog\User
 {
     public function __construct(
         private UUID $uuid,

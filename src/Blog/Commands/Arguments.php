@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Command;
+namespace App\Blog\Commands;
 
 use App\Blog\Exceptions\ArgumentsException;
 

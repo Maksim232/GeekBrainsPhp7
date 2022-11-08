@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Blog\Command;
+namespace App\Blog\Commands;
+
+use App\Blog\Exceptions\ArgumentsException;
 use App\Blog\Repositories\UsersRepository\UsersRepositoryInterface;
 use App\Blog\Exceptions\UserNotFoundException;
 use App\Blog\User;
@@ -8,15 +10,11 @@ use App\Blog\UUID;
 use App\Blog\Exceptions\CommandException;
 use App\Person\Name;
 
-//php cli.php username=ivan first_name=Ivan last_name=Nikitin
-
-
 class CreateUserCommand
 {
     public function __construct(
         private UsersRepositoryInterface $usersRepository
-    )
-    {
+    ) {
     }
 
     /**
@@ -42,16 +40,17 @@ class CreateUserCommand
             $username
         ));
     }
+
     private function userExists(string $username): bool
     {
         try {
-// Пытаемся получить пользователя из репозитория
             $this->usersRepository->getByUsername($username);
         } catch (UserNotFoundException) {
             return false;
         }
         return true;
     }
+
 }
 
 
